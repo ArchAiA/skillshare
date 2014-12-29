@@ -13,6 +13,8 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'signups.views.home', name='home'),
+    url(r'^thank-you/$', 'signups.views.thankyou', name='thankyou'), # This creates an entry stating that [#/thank-you] should be rendered by the thankyou class defined in views.py
+    url(r'^about-us/$', 'signups.views.aboutus', name='aboutus'),
 )
 
 if settings.DEBUG: #! If you are in DEBUG mode, then append the below to the urlpatterns variable
