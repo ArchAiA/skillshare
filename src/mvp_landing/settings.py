@@ -8,6 +8,18 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
+#! So we import the new email_info.py file that we created and set each email constant equal to the imported constant -- added in Lecture 32
+#! If we wanted to import everything in email_info.py we could do this instead: [from .email_info import *]
+from .email_info import EMAIL_USE_TLS, EMAIL_HOST, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_PORT
+
+EMAIL_USE_TLS = EMAIL_USE_TLS
+EMAIL_HOST = EMAIL_HOST
+EMAIL_HOST_USER = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
+EMAIL_PORT = EMAIL_PORT
+#! So we import the new email_info.py file that we created and set each email constant equal to the imported constant -- added in Lecture 32
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__)) #! This takes the directory of the current file (settings.py) and goes up one level and assigns to BASE_DIR
@@ -37,6 +49,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'south',   #! The south app was used in Lecture 31
     'signups', #! After adding the new class as a model (in models.py) you must indicate where the APP/model/class is
 )
 

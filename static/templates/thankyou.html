@@ -4,7 +4,13 @@
 {% block content %}
     
 <div class='col-sm-12' style='text-align: center'>
-    <h1>Thank you for joining!</h1>
+    <h1>Just one more step.  Please complete the following:</h1>
+    
+    <h1>Join Now</h1>
+    <form method='POST' action=''> {% csrf_token %} <!-- csrf_token helps protect against spambots -->
+    {{form.as_p}} <!-- Print form "as paragraph" -->
+    <input type='submit' class='btn btn-success' value='Finalize Pre-Order'>
+    </form>
 </div>
 
 {% endblock %}

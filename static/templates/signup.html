@@ -37,11 +37,25 @@
         </div>
         
         <div class="col-sm-3">
-          <h1>Join Now</h1>
-          <form method='POST' action=''> {% csrf_token %} <!-- csrf_token helps protect against spambots -->
-            {{form.as_p}} <!-- Print form "as paragraph" -->
-          <input type='submit' class='btn btn-success btn-block'>
-          </form>
+          <h1>Pre-Order</h1>
+          <p>Join this course now. Please pre-order</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"> <!-- Paypal Added in Lecture 30 -->
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="CNXD4DLTYPCQL">
+            <input type="hidden" name="on0" value="Course">
+                <select class = "form-control" name="os0">
+                    <option value="Basic">Basic $99.00 USD</option>
+                    <option value="Basic+">Basic+ $149.00 USD</option>
+                    <option value="Premium">Premium $199.00 USD</option>
+            </select>
+            <input type="hidden" name="currency_code" value="USD">
+            <br />
+            <input type="submit" class='btn btn-success btn-block'>              
+<!-- Replaced default Paypal button with custom button in Lecture 30
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+-->
+            </form> <!-- Paypal Added in Lecture 30 -->
         </div>
                 
                 
